@@ -1,0 +1,21 @@
+---
+layout: layouts/base.njk
+title: Home
+---
+<section class="hero">
+  <h1>DraperMakers</h1>
+  <p>Handmade costumes from the Draper family — built for conventions, worn with pride.</p>
+</section>
+
+<section class="recent-posts">
+  <h2>Latest Builds</h2>
+  <div class="post-grid">
+  {% for post in collections.buildLogs %}
+    <a class="post-card theme-{{ post.data.theme }}" href="{{ post.url }}">
+      {% if post.data.cover %}<img src="{{ post.data.cover }}" alt="{{ post.data.title }}">{% endif %}
+      <h3>{{ post.data.title }}</h3>
+      <p>{{ post.data.costume }} &middot; {{ post.data.year }}</p>
+    </a>
+  {% endfor %}
+  </div>
+</section>

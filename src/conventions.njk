@@ -1,0 +1,17 @@
+---
+layout: layouts/base.njk
+title: Conventions
+permalink: /conventions/
+---
+<h1>Upcoming Conventions</h1>
+<div class="convention-list">
+{% for con in collections.conventions %}
+  <div class="convention-item">
+    <h3>{{ con.data.title }}</h3>
+    <p>{{ con.data.date }} &middot; {{ con.data.location }}</p>
+    {% if con.data.link %}<a href="{{ con.data.link }}">More info</a>{% endif %}
+  </div>
+{% else %}
+  <p>No conventions posted yet — add one from the admin panel.</p>
+{% endfor %}
+</div>

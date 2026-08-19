@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title or "DraperMakers" }} — DraperMakers</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Orbitron:wght@600&family=Poppins:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="page{% if theme %} theme-{{ theme }}{% endif %}">
+  <header class="site-header">
+    <a href="/" class="site-title">DraperMakers</a>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/archive/">Costume Archive</a>
+      <a href="/conventions/">Conventions</a>
+      <a href="/about/">About</a>
+    </nav>
+  </header>
+  <main>
+    {{ content | safe }}
+  </main>
+  <footer class="site-footer">
+    <p>Handmade by the Draper family.</p>
+  </footer>
+</body>
+</html>

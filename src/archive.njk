@@ -1,0 +1,18 @@
+---
+layout: layouts/base.njk
+title: Costume Archive
+permalink: /archive/
+---
+<h1>Costume Archive</h1>
+<p>Every costume we've built, newest first.</p>
+
+<div class="archive-list">
+{% for post in collections.buildLogs %}
+  <a class="archive-item theme-{{ post.data.theme }}" href="{{ post.url }}">
+    <span class="archive-year">{{ post.data.year }}</span>
+    <span class="archive-title">{{ post.data.title }}</span>
+    <span class="archive-costume">{{ post.data.costume }}</span>
+    {% if post.data.placement %}<span class="archive-placement">{{ post.data.placement }}</span>{% endif %}
+  </a>
+{% endfor %}
+</div>

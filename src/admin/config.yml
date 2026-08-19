@@ -1,0 +1,49 @@
+backend:
+  name: github
+  # Change this to YOUR-GITHUB-USERNAME/drapermakers once you've created the repo.
+  repo: thedrapercode/drapermakers
+  branch: main
+
+media_folder: "src/images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "build_logs"
+    label: "Build Logs"
+    folder: "src/build-logs"
+    create: true
+    slug: "{{year}}-{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Costume", name: "costume", widget: "string" }
+      - { label: "Year", name: "year", widget: "number", value_type: "int" }
+      - label: "Theme"
+        name: "theme"
+        widget: "select"
+        hint: "Controls the color palette and font for this post."
+        options:
+          - { label: "Anime", value: "anime" }
+          - { label: "Horror / Creature", value: "horror" }
+          - { label: "Sci-Fi", value: "scifi" }
+          - { label: "Classic Monster", value: "classic-monster" }
+      - { label: "Made By", name: "maker", widget: "string", required: false }
+      - { label: "Cover Photo", name: "cover", widget: "image", required: false }
+      - label: "Build Photos"
+        name: "photos"
+        widget: "list"
+        required: false
+        field: { label: "Photo", name: "photo", widget: "image" }
+      - { label: "Contest Placement", name: "placement", widget: "string", required: false, hint: "e.g. \"2nd Place, Kids Costume Contest\"" }
+      - { label: "Layout", name: "layout", widget: "hidden", default: "layouts/post.njk" }
+      - { label: "Write-up", name: "body", widget: "markdown" }
+
+  - name: "conventions"
+    label: "Upcoming Conventions"
+    folder: "src/conventions"
+    create: true
+    fields:
+      - { label: "Name", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Location", name: "location", widget: "string" }
+      - { label: "Link", name: "link", widget: "string", required: false }
+      - { label: "Permalink (leave as-is)", name: "permalink", widget: "hidden", default: false }

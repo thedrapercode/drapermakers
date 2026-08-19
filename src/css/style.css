@@ -1,0 +1,132 @@
+:root {
+  --bg: #111319;
+  --fg: #f2f2f2;
+  --accent: #ff5a36;
+  --card-bg: #1b1e27;
+  --font-body: system-ui, -apple-system, sans-serif;
+  --font-heading: system-ui, -apple-system, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  line-height: 1.55;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+h1, h2, h3 { font-family: var(--font-heading); }
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.site-title { color: var(--accent); font-weight: bold; text-decoration: none; font-size: 1.25rem; }
+
+.site-header nav a {
+  color: inherit;
+  text-decoration: none;
+  margin-left: 1.25rem;
+  opacity: 0.85;
+}
+.site-header nav a:hover { opacity: 1; text-decoration: underline; }
+
+main { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+
+.site-footer { text-align: center; padding: 2rem; opacity: 0.6; font-size: 0.9rem; }
+
+.hero { text-align: center; padding: 2rem 0; }
+.hero h1 { font-size: 2.5rem; color: var(--accent); }
+
+.post-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+
+.post-card {
+  display: block;
+  background: var(--card-bg);
+  border-radius: 10px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.post-card img { width: 100%; height: 160px; object-fit: cover; display: block; }
+.post-card h3, .post-card p { padding: 0 0.9rem; margin: 0.5rem 0; }
+
+.archive-list { display: flex; flex-direction: column; gap: 0.5rem; margin-top: 1rem; }
+.archive-item {
+  display: flex;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  background: var(--card-bg);
+  border-radius: 8px;
+  color: inherit;
+  text-decoration: none;
+  align-items: center;
+}
+.archive-year { opacity: 0.6; width: 3.5rem; }
+.archive-title { font-weight: 600; }
+.archive-costume { opacity: 0.75; }
+.archive-placement { margin-left: auto; color: var(--accent); font-weight: 600; }
+
+.convention-item {
+  padding: 1rem;
+  background: var(--card-bg);
+  border-radius: 8px;
+  margin-bottom: 0.75rem;
+}
+
+.costume-post .cover { width: 100%; max-height: 480px; object-fit: cover; border-radius: 10px; }
+.costume-post .meta { opacity: 0.75; }
+.costume-post .gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+.costume-post .gallery img { width: 100%; border-radius: 8px; object-fit: cover; }
+
+/* ---------- Theme variants: pick one per post in the CMS ---------- */
+
+.theme-anime {
+  --bg: #fdf1f7;
+  --fg: #33121f;
+  --accent: #ff3d81;
+  --card-bg: #ffe1ee;
+  --font-heading: "Poppins", var(--font-body);
+}
+
+.theme-horror {
+  --bg: #0a0a0a;
+  --fg: #e7e7e7;
+  --accent: #b00000;
+  --card-bg: #1a1414;
+  --font-heading: "Creepster", Georgia, serif;
+}
+
+.theme-scifi {
+  --bg: #050b14;
+  --fg: #d6f5ff;
+  --accent: #00e5ff;
+  --card-bg: #0d1b28;
+  --font-heading: "Orbitron", var(--font-body);
+}
+
+.theme-classic-monster {
+  --bg: #10120d;
+  --fg: #e8e3d3;
+  --accent: #7a9c4e;
+  --card-bg: #1a1c14;
+  --font-heading: Georgia, serif;
+}

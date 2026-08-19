@@ -1,0 +1,32 @@
+---
+layout: layouts/base.njk
+---
+<article class="costume-post theme-{{ theme }}">
+  <h1>{{ title }}</h1>
+  <p class="meta">
+    {{ costume }} &middot; {{ year }}
+    {%- if maker %} &middot; made by {{ maker }}{% endif -%}
+    {%- if placement %} &middot; <strong>{{ placement }}</strong>{% endif -%}
+  </p>
+
+  {% if cover %}<img class="cover" src="{{ cover }}" alt="{{ title }}">{% endif %}
+
+  <div class="body">
+    {{ content | safe }}
+  </div>
+
+  {% if photos and photos.length %}
+  <div class="gallery">
+    {% for item in photos %}
+      <img src="{{ item.photo }}" alt="{{ title }} — build photo {{ loop.index }}">
+    {% endfor %}
+  </div>
+  {% endif %}
+</article>
+
+<!--
+  Comments (giscus) go here once you've set it up at https://giscus.app,
+  pointed at your GitHub repo. Paste the generated <script> tag in place
+  of this comment. Requires a GitHub login to comment, and you can block
+  anyone from your repo settings.
+-->
