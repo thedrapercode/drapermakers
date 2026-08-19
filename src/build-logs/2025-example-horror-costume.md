@@ -1,5 +1,5 @@
 ---
-title: Marionette FNAF
+title: Marionette Puppet
 costume: Five Night At Freddy's
 year: 2027
 theme: horror
