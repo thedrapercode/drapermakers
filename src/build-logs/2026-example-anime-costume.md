@@ -1,6 +1,6 @@
 ---
-title: Example Anime Costume
-costume: Anime Hero (replace me)
+title: Toga Himiko
+costume: My Hero Academia
 year: 2026
 theme: anime
 maker: Violet Connolly and Justin Draper
